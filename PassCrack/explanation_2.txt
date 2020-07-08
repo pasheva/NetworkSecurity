@@ -1,0 +1,25 @@
+User 7
+
+Frequency Analysis Substitution.
+
+I did not have enough time to write the whole algorithm so I
+did most of it by hand. First, I started of by analying the
+frequency of each letter and mapping it to the frequency in letters
+in the English lagnauge. From then on the idea was to change the
+letters as I keep decrypting and acoding any duplicates, such as
+'a' corresponding to two different letters.  The next analysis I did
+was to get the one word letter and decide, which one is 'a' and 'i'.
+There is also a grammatical part which could be inserted of the language.
+Such as that 'a' would appear more as a first letter of the words or
+Trigraphs "and". Moreover, 'i' if in the beginning of a sentance is most likely
+followed by some Trigraph  or Digprah such as "was" "am" "can", therefore,
+I am , one after another would be two different chars. After, that I started analyzing the
+^ ^
+Digprahs and Trigraphs and substituting for them. From then one, I read through the text,
+and once I noticed a word which was resembling an actual one in English I would switch
+the word and change the corresponding letters. This also could be done using a dictionary with
+English words, such as that once there is 80% or 90% match the word can be replaced and the
+letters substitution changed.
+This should be done in repeated manner once most of the words match  English words. There could
+be exceptions such as names and lables, which would cause the text to may be fully properly substituted
+for a very small percentage.

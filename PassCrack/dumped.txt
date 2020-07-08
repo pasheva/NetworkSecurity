@@ -1,0 +1,7 @@
+user1  :  matrix123    32
+user2  :  snowball1    64
+user3  :  galadriel    128
+user4  :  rousseau    40
+user5  :  josephine    64
+user6  :  pumpkin1    128
+user7  :  leprechaun    32

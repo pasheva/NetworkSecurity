@@ -1,0 +1,19 @@
+TASK1
+
+Cracking the passwords from user1 to user6.
+
+My thought process was to first look for the most commonly used hashes.
+After that I noticed that they are all of different lengths. Following that,
+I started searching whether I will be able to group them by lengths. Also, I
+looked into the hashlib library and the hash algorithms which are supported.
+After grouping them by size I took out the most popular ones based on the length.
+I did have additional ones such as MD4 for length of 32 (128bits), but I eventually
+removed it since I found out that it has not been used. After that I first coded user 3,
+which I already knew is using the Caesar cipher. It is going through all the possible shifts
+in order to find the correct one. After that I ran the plainly hashed passwords without any Leet or
+SALTs to find which ones are just encrypted using plainly the hash. After that I attempted the basic Leet, which
+left me only with user2, therefore, I had to apply the SALT case for it. I left the SALT for last since it
+takes the most time. I initially started looping through all the values in order, however I decided that
+a better approach would be to keep adding random number within the range, hashing it with the appropriate
+hash (based on the length (sha256, 64 chars, 256bits) and checking immediately whether it is matching.
+

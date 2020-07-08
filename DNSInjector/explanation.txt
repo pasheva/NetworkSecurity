@@ -1,0 +1,24 @@
+My approach to the DNS injection is the following. Please keep in mind that the script has several dependencies,
+which are listed in the header of the file. The script should have no issues on running on any Linux Distro.
+My initial approach initially enables the wifi card in a promiscuous mode. I also attempted to write a script 
+for arp spoofing, however, it seemed like I was supposed to run it concurrently with the dns injection
+script in order to be able to have man in the middle attack. Moreover, after I wrote the script to sniff the network and
+flter the correct packages I was still not being able to win the race and accroding to the
+scapy documentation the sniff() function was not recommended for spoofing network traffic since it is
+slower. Therefore, since both of above did not work for me I decided to just apply a firewall and change the package as
+I receive it for which I used the netfilterqueue library. The script is working when checking with dig and nslookup, however the only issue comes with Wireshark.
+The original not changed packages still show up and after additinal research I believe the reason for that 
+may be libpcap, which is used by the kernel to capture the packages. I did read that it is possible to change
+the priority number for iptables to get ahead of libpcap, but unfortunatelly did not managed to find
+how exactly to do that. Any additinal information of how the program is working and also the output it has
+is documented in the source code. 
+
+Resources:
+Books:
+    Computer Networking: A Top-down Approach
+    Cyber Operations: Building, Defending, and Attacking Modern Computer Networks
+    Lab 4: DSN Primer Note (provided in the pdf)
+Online:
+    https://scapy.readthedocs.io/en/latest/ as well as Scapy CLI help().
+    https://pypi.org/project/NetfilterQueue/
+    https://www.digitalocean.com/community/tutorials/a-deep-dive-into-iptables-and-netfilter-architecture

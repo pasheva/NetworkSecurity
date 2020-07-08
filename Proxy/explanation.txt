@@ -1,0 +1,11 @@
+I spend most of the time working on the building and understanding the actual
+proxy. My initial idea was to be able to create the proxy and manage
+to run it sucessfully and then attemp the jaca script injection.
+However, I did run into issue creating the proxy and I was unable to complete
+the task. My script simply starts with creating the socket in order to
+listen for the incoming connections based on the ip and port given from
+the user. When the connection is set and recived the thread is set and the
+clients data from the browser request is passed on so I can parse it.
+After that I am able to create the proxy server and from then on I was not able
+to solve of how to inject javascript. I had several attempts but nothing worked
+properly so I ommited it from the final submission.
